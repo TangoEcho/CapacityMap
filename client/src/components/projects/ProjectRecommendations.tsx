@@ -13,7 +13,7 @@ import {
 import Navbar from '../common/Navbar';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
-import { banksApi, projectsApi, settingsApi, countriesApi } from '../../services/api';
+import { banksApi, projectsApi, settingsApi, countriesApi } from '../../services/api-adapter';
 import { Bank, Project, Settings, CountryInfo, RankedBank } from '../../types';
 import { rankBanksForProject } from '../../utils/ranking';
 import { getRatingColor, countryCodeToFlag, getCapacityHealth } from '../../utils/creditRating';

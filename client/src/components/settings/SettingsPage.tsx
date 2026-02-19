@@ -7,7 +7,7 @@ import { Add, VisibilityOff } from '@mui/icons-material';
 import Navbar from '../common/Navbar';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
-import { settingsApi } from '../../services/api';
+import { settingsApi } from '../../services/api-adapter';
 import { Settings } from '../../types';
 
 interface SettingsPageProps {

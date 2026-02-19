@@ -5,7 +5,7 @@ import {
   InputAdornment, Typography, Box,
 } from '@mui/material';
 import { Project, ProjectInput } from '../../types';
-import { countriesApi } from '../../services/api';
+import { countriesApi } from '../../services/api-adapter';
 import { useApi } from '../../hooks/useApi';
 import { CREDIT_RATINGS } from '../../utils/creditRating';
 

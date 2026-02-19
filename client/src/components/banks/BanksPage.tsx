@@ -14,7 +14,7 @@ import BankForm from './BankForm';
 import ExcelImport from './ExcelImport';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
-import { banksApi, uploadApi } from '../../services/api';
+import { banksApi, uploadApi } from '../../services/api-adapter';
 import { Bank, BankInput } from '../../types';
 import { getRatingColor, formatCountryDisplay, getCapacityHealth } from '../../utils/creditRating';
 
@@ -186,7 +186,7 @@ export default function BanksPage() {
                         {bank.logoUrl && (
                           <Box
                             component="img"
-                            src={`http://localhost:3001${bank.logoUrl}`}
+                            src={bank.logoUrl?.startsWith('data:') ? bank.logoUrl : `http://localhost:3001${bank.logoUrl}`}
                             sx={{ width: 24, height: 24, borderRadius: 1, objectFit: 'contain' }}
                           />
                         )}

@@ -17,7 +17,7 @@ import ProjectForm from './ProjectForm';
 import ProjectOptimizer from './ProjectOptimizer';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
-import { projectsApi, banksApi, settingsApi, countriesApi } from '../../services/api';
+import { projectsApi, banksApi, settingsApi, countriesApi } from '../../services/api-adapter';
 import { Project, ProjectInput, Bank, Settings, CountryInfo } from '../../types';
 import { countryCodeToFlag, getRatingColor } from '../../utils/creditRating';
 import * as XLSX from 'xlsx';

@@ -9,7 +9,7 @@ import { ExpandMore, Search, Public } from '@mui/icons-material';
 import Navbar from '../common/Navbar';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
-import { banksApi, projectsApi, countriesApi } from '../../services/api';
+import { banksApi, projectsApi, countriesApi } from '../../services/api-adapter';
 import { Bank, Project, CountryInfo } from '../../types';
 import { countryCodeToFlag, getRatingColor } from '../../utils/creditRating';
 

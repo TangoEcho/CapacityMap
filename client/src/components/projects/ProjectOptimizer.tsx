@@ -7,7 +7,7 @@ import {
 import { AutoFixHigh, Check, Close, Lock, Refresh, ExpandMore, ExpandLess, Search } from '@mui/icons-material';
 import { Bank, Project, Settings, OptimizationResult, CountryInfo } from '../../types';
 import { optimizeProjects, rankBanksForProject } from '../../utils/ranking';
-import { projectsApi } from '../../services/api';
+import { projectsApi } from '../../services/api-adapter';
 import { useSettings } from '../../hooks/useSettings';
 import { getRatingColor, countryCodeToFlag, getCapacityHealth } from '../../utils/creditRating';
 

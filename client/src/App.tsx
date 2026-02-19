@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
 import { lightTheme, darkTheme } from './theme/theme';
 import { SettingsProvider } from './hooks/useSettings';
@@ -10,6 +10,8 @@ import BanksPage from './components/banks/BanksPage';
 import CountriesPage from './components/countries/CountriesPage';
 import ProjectRecommendations from './components/projects/ProjectRecommendations';
 import SettingsPage from './components/settings/SettingsPage';
+
+const Router = import.meta.env.VITE_STORAGE === 'local' ? HashRouter : BrowserRouter;
 
 export default function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
@@ -28,7 +30,7 @@ export default function App() {
     <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
       <CssBaseline />
       <SettingsProvider>
-      <BrowserRouter>
+      <Router>
         <Box sx={{ display: 'flex' }}>
           <Sidebar />
           <Box component="main" sx={{ flexGrow: 1, minHeight: '100vh', bgcolor: 'background.default' }}>
@@ -42,7 +44,7 @@ export default function App() {
             </Routes>
           </Box>
         </Box>
-      </BrowserRouter>
+      </Router>
       </SettingsProvider>
     </ThemeProvider>
   );

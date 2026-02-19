@@ -7,7 +7,7 @@ import DashboardCharts from './DashboardCharts';
 import { useApi } from '../../hooks/useApi';
 import { useSettings } from '../../hooks/useSettings';
 import { useExport } from '../../hooks/useExport';
-import { banksApi, projectsApi, countriesApi } from '../../services/api';
+import { banksApi, projectsApi, countriesApi } from '../../services/api-adapter';
 import { Bank, Project, CountryInfo } from '../../types';
 import { getCapacityHealth } from '../../utils/creditRating';
 

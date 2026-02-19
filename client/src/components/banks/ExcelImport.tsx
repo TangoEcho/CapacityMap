@@ -5,7 +5,7 @@ import {
   TableHead, TableRow, Paper, Chip, LinearProgress,
 } from '@mui/material';
 import { CloudUpload } from '@mui/icons-material';
-import { uploadApi } from '../../services/api';
+import { uploadApi } from '../../services/api-adapter';
 import { ExcelImportRow } from '../../types';
 
 interface ExcelImportProps {

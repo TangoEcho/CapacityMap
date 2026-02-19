@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { Settings } from '../types';
-import { settingsApi } from '../services/api';
+import { settingsApi } from '../services/api-adapter';
 
 interface SettingsContextValue {
   settings: Settings | null;

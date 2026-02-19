@@ -5,7 +5,7 @@ import {
 } from '@mui/material';
 import { PhotoCamera } from '@mui/icons-material';
 import { Bank, BankInput } from '../../types';
-import { uploadApi, countriesApi } from '../../services/api';
+import { uploadApi, countriesApi } from '../../services/api-adapter';
 import { useApi } from '../../hooks/useApi';
 import { CREDIT_RATINGS } from '../../utils/creditRating';
 
@@ -85,7 +85,7 @@ export default function BankForm({ open, bank, onClose, onSave }: BankFormProps)
               {(form.logoUrl || logoFile) && (
                 <Box
                   component="img"
-                  src={logoFile ? URL.createObjectURL(logoFile) : `http://localhost:3001${form.logoUrl}`}
+                  src={logoFile ? URL.createObjectURL(logoFile) : form.logoUrl?.startsWith('data:') ? form.logoUrl : `http://localhost:3001${form.logoUrl}`}
                   sx={{ width: 40, height: 40, borderRadius: 1, objectFit: 'contain' }}
                 />
               )}
