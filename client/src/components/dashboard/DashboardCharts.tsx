@@ -135,13 +135,13 @@ export default function DashboardCharts({ banks, projects, countries, hideCapaci
                 tick={{ fontSize: 11, fill: '#6b7280' }}
                 axisLine={false}
                 tickLine={false}
-                tickFormatter={hideCapacity ? () => '' : (v: number) => `${(v/1000).toFixed(0)}k`}
+                tickFormatter={hideCapacity ? () => '' : (v) => `${(Number(v)/1000).toFixed(0)}k`}
               />
               <Tooltip
                 {...tooltipStyle}
                 formatter={hideCapacity
-                  ? (v: number, name: string) => [name === 'used' ? 'Used' : 'Available', '']
-                  : (v: number, name: string) => [`$${v.toLocaleString()}M`, name === 'used' ? 'Used' : 'Available']}
+                  ? (_v: any, name: any) => [name === 'used' ? 'Used' : 'Available', '']
+                  : (v: any, name: any) => [`$${Number(v).toLocaleString()}M`, name === 'used' ? 'Used' : 'Available']}
               />
               <Legend
                 iconType="circle"
@@ -178,14 +178,14 @@ export default function DashboardCharts({ banks, projects, countries, hideCapaci
                 dataKey="value"
                 strokeWidth={0}
                 label={hideCapacity
-                  ? ({ name }: { name: string }) => name
-                  : ({ name, value }: { name: string; value: number }) => `${name}: $${(value/1000).toFixed(1)}B`}
+                  ? (props: any) => props.name
+                  : (props: any) => `${props.name}: $${(props.value/1000).toFixed(1)}B`}
                 labelLine={{ stroke: '#9ca3af', strokeWidth: 1 }}
               >
                 <Cell fill="url(#pieUsed)" />
                 <Cell fill="url(#pieAvail)" />
               </Pie>
-              {!hideCapacity && <Tooltip {...tooltipStyle} formatter={(v: number) => `$${v.toLocaleString()}M`} />}
+              {!hideCapacity && <Tooltip {...tooltipStyle} formatter={(v: any) => `$${Number(v).toLocaleString()}M`} />}
               <text x="50%" y="45%" textAnchor="middle" dominantBaseline="middle" style={{ fontSize: 28, fontWeight: 700, fill: BRAND_DARK }}>
                 {utilizationData.pct}%
               </text>
@@ -218,7 +218,7 @@ export default function DashboardCharts({ banks, projects, countries, hideCapaci
                 tick={{ fontSize: 11, fill: '#6b7280' }}
                 axisLine={false}
                 tickLine={false}
-                tickFormatter={hideCapacity ? () => '' : (v: number) => `${(v/1000).toFixed(0)}k`}
+                tickFormatter={hideCapacity ? () => '' : (v) => `${(Number(v)/1000).toFixed(0)}k`}
               />
               <YAxis
                 dataKey="name"
@@ -231,8 +231,8 @@ export default function DashboardCharts({ banks, projects, countries, hideCapaci
               <Tooltip
                 {...tooltipStyle}
                 formatter={hideCapacity
-                  ? (v: number, name: string) => [name === 'used' ? 'Used' : 'Available', '']
-                  : (v: number, name: string) => [`$${v.toLocaleString()}M`, name === 'used' ? 'Used' : 'Available']}
+                  ? (_v: any, name: any) => [name === 'used' ? 'Used' : 'Available', '']
+                  : (v: any, name: any) => [`$${Number(v).toLocaleString()}M`, name === 'used' ? 'Used' : 'Available']}
               />
               <Bar dataKey="used" stackId="a" fill="url(#bankUsed)" name="used" />
               <Bar dataKey="available" stackId="a" fill="url(#bankAvail)" name="available" radius={[0, 4, 4, 0]} />
@@ -267,7 +267,7 @@ export default function DashboardCharts({ banks, projects, countries, hideCapaci
                   paddingAngle={4}
                   dataKey="value"
                   strokeWidth={0}
-                  label={({ name, value }: { name: string; value: number }) => `${name}: ${value}`}
+                  label={(props: any) => `${props.name}: ${props.value}`}
                   labelLine={{ stroke: '#9ca3af', strokeWidth: 1 }}
                 >
                   <Cell fill="url(#piePlanned)" />
