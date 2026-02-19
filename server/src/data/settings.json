@@ -1,0 +1,13 @@
+{
+  "weights": {
+    "capacityHeadroom": 0.5,
+    "priceCompetitiveness": 0.25,
+    "creditRating": 0.25
+  },
+  "sensitiveSubjects": [
+    "Nuclear",
+    "Coal"
+  ],
+  "theme": "light",
+  "hideCapacity": false
+}

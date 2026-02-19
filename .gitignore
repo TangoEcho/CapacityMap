@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+client/dist/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Uploads (user data)
+server/src/uploads/*.png
+server/src/uploads/*.jpg
+server/src/uploads/*.jpeg
+!server/src/uploads/.gitkeep
+
+# Screenshots (development artifacts)
+*.png
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Logs
+*.log
+npm-debug.log*
