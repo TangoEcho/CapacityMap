@@ -48,9 +48,9 @@ export default function Sidebar() {
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, py: 1 }}>
           <BankIcon sx={{ fontSize: 28 }} />
           <Box sx={{ fontWeight: 700, fontSize: '1.1rem', lineHeight: 1.2 }}>
-            Credit Capacity
+            TF Capacity
             <br />
-            Mapper
+            Management
           </Box>
         </Box>
       </Toolbar>

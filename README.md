@@ -1,4 +1,4 @@
-# Credit Capacity Mapper
+# TF Capacity Management
 
 A tool for evaluating and optimizing bank credit capacity allocations across global projects. Users enter project requirements (country, capacity, tenor, sensitive subjects) and the app ranks eligible banks by fit, supports multi-project optimization, and provides interactive dashboards for data-driven decision-making.
 

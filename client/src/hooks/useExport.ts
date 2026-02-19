@@ -55,7 +55,7 @@ export function useExport() {
 
     // Title slide
     const titleSlide = pptx.addSlide();
-    titleSlide.addText('Credit Capacity Dashboard', {
+    titleSlide.addText('TF Capacity Management Dashboard', {
       x: 0.5, y: 1.5, w: '90%', h: 1.5,
       fontSize: 36, fontFace: 'Arial', color: '002B5C',
       bold: true, align: 'center',
